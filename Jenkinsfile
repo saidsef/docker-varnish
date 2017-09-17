@@ -22,7 +22,12 @@ node("spot") {
     docker.withRegistry("https://registry.hub.docker.com", "docker-hub") {
       app.push("${env.BUILD_NUMBER}")
       app.push("latest")
+      try {
+        sh "docker stop docker-varnish"
+        sh "docker rm docker-varnish"
+      } catch(Exception _) {
+        echo "Nothing to remove"
+      }
     }
   }
-
 }
