@@ -23,10 +23,11 @@ node("spot") {
       app.push("${env.BUILD_NUMBER}")
       app.push("latest")
       try {
-        sh "docker stop docker-varnish"
-        sh "docker rm docker-varnish"
+        sh "docker rmi ${app.id}"
       } catch(Exception _) {
         echo "Nothing to remove"
+      } finally {
+        deleteDir()
       }
     }
   }
