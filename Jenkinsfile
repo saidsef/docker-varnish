@@ -23,7 +23,7 @@ node("spot") {
       app.push("${env.BUILD_NUMBER}")
       app.push("latest")
       try {
-        sh "docker rmi ${app.id}"
+        sh "docker rmi ${app.id} -f"
       } catch(Exception _) {
         echo "Nothing to remove"
       } finally {
