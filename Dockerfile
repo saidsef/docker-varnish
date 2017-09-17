@@ -1,7 +1,8 @@
 FROM alpine
 MAINTAINER Said Sef <saidsef@gmail.com> (http://saidsef.co.uk/)
 
-# add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
+# add our user and group first to make sure their IDs get assigned consistently
+# regardless of whatever dependencies get added
 # RUN addgroup -S varnish --gid  && adduser -S -G varnish varnish
 
 # Install varnish

@@ -24,6 +24,7 @@ node("spot") {
       app.push("latest")
       try {
         sh "docker rmi ${app.id} -f"
+        sh "docker rmi registry.hub.docker.com/${app.id} -f"
       } catch(Exception _) {
         echo "Nothing to remove"
       } finally {
