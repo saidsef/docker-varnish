@@ -1,5 +1,6 @@
 #!/bin/sh
 set -e
+set -pipefail
 
 VARNISH_BACKEND="-b ${VARNISH_BACKEND_ADDRESS}:${VARNISH_BACKEND_PORT}"
 
